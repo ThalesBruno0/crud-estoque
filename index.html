@@ -7,9 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Estoque</h1>
-    <p>Quantidade no estoque: 3</p>
-    <p>Quantidade na prateleira: 6</p>
+    <header>Estoque</header>
+
+    <main class="container">
+        <section class="section-form">
+            <h2>Cadastrar Produto:</h2>
+            <form id="produto-form">
+                <div class="form-group">
+                    <label for="nome-produto">Nome do produto:</label>
+                    <input type="text" id="nome-produto" required placeholder="Ex: Caixa de ferro">
+                </div>
+                <div class="form-group">
+                    <label for="qtde-produto">Quantidade:</label>
+                    <input type="number" id="qtde-produto" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="preco-produto">Preço Unitário: R$</label>
+                    <input type="number" id="preco-produto" required min="0" step="0.01" placeholder="Ex: 299,90">
+                </div>
+                <button type="submit" id="btn-salvar">Salvar</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Produtos em estoque</h2>
+            <table id="inventario-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Total</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="inventario-list">
+                    <tr>
+                        <td colspan="5" class="empty-msg">
+                            Nenhum produto cadastrado ainda.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
