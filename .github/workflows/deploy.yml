@@ -1,0 +1,33 @@
+# O nome que vai aparecer lá na aba "Actions" do GitHub
+name: Pipeline de Deploy Automatizado
+
+# QUANDO o pipeline deve rodar? 
+on:
+  push:
+    branches:
+      - main  # Tradução: "Toda vez que eu der um git push na ramificação main"
+
+# O QUE o pipeline deve fazer?
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # O robô vai ligar uma máquina virtual com Linux (Ubuntu) atualizado
+
+    steps:
+      # Passo 1: Baixar o código do seu repositório para dentro da máquina virtual
+      - name: Baixando o código do repositório
+        uses: actions/checkout@v4
+
+      # Passo 2: Configurar o ambiente do GitHub Pages dentro da máquina virtual
+      - name: Configurando o GitHub Pages
+        uses: actions/configure-pages@v4
+
+      # Passo 3: Compactar os arquivos (HTML, CSS, JS) para o envio
+      - name: Compactando os arquivos do front-end
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # O ponto significa que vamos enviar tudo da pasta atual
+
+      # Passo 4: Fazer o Deploy de fato (colocar o site no ar)
+      - name: Colocando o site no ar (Deploy)
+        id: deployment
+        uses: actions/deploy-pages@v4
