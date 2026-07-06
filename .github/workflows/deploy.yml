@@ -23,6 +23,9 @@ jobs:
       - name: Baixando o código do repositório
         uses: actions/checkout@v4
 
+      - name: Esperando a sincronização do ambiente
+        run: sleep 5
+
       # Passo 2: Configurar o ambiente do GitHub Pages dentro da máquina virtual
       - name: Configurando o GitHub Pages
         uses: actions/configure-pages@v4
