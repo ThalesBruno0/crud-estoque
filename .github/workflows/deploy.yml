@@ -13,9 +13,17 @@ permissions:
     pages: write
     id-token: write
 
+concurrency:
+    group: pages
+    cancel-in-progress: true
+
 # O QUE o pipeline deve fazer?
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest # O robô vai ligar uma máquina virtual com Linux (Ubuntu) atualizado
 
     steps:
