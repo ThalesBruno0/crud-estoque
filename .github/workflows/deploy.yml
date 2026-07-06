@@ -7,6 +7,12 @@ on:
     branches:
       - main  # Tradução: "Toda vez que eu der um git push na ramificação main"
 
+#Permissão para o pipeline poder publicar no github
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
 # O QUE o pipeline deve fazer?
 jobs:
   deploy:
