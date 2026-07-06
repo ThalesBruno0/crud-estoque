@@ -48,3 +48,4 @@ jobs:
       - name: Colocando o site no ar (Deploy)
         id: deployment
         uses: actions/deploy-pages@v4
+        timeout-minutes: 5
