@@ -1,8 +1,8 @@
 <h1>Objetivo</h1>
-O objetivo é gerenciar todas as informações de forma inteligente para que o usuário não precise recorrer ao Excel para fazer uma análise de seus dados.
+O usuário pode cadastrar, ver, editar e excluir produtos no site.
 
 <h2>O que é este projeto?</h2>
-Este projeto é um CRUD feito com HTML, CSS e Javascript no front-end, em que é possível gerenciar o estoque de uma loja de equipamentos industriais.
+Este projeto é um CRUD feito com HTML, CSS e Javascript em que é possível gerenciar o estoque de uma loja.
 
 <hr>
 
