@@ -27,7 +27,7 @@ function mostraTabela(){
             <td>R$ ${produto.preco.toFixed(2)}</td>
             <td>R$ ${totalValue.toFixed(2)}</td>
             <td>
-                <button class="btn-delete" onclick="deleteProduct(${index})" style="background-color: var(--danger-color); padding: 5px 10px; font-size: 0.85rem;">Excluir</button>
+                <button class="btn-delete" onclick="deletaProduto(${index})" style="background-color: var(--danger-color); padding: 5px 10px; font-size: 0.85rem;">Excluir</button>
             </td>
         `;
 
